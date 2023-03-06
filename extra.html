@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Javascript extra credit problems</title>
+        <!-- <link rel="stylesheet"href="styles.css"> -->
+        <!-- <script src="script.js"></script> -->
+        <script>
+            function jumpText() {
+                let left = document.getElementById("left").value;
+                let right = document.getElementById("right").value;
+                let jump_dir = document.getElementById("jump").textContent;
+                console.log(left + " " + jump_dir + " " + right);
+                if (jump_dir == "JUMP >") {
+                    document.getElementById("jump").textContent = "< JUMP";
+                } else {
+                    document.getElementById("jump").textContent = "JUMP >";
+                }
+                document.getElementById("left").value = right;
+                document.getElementById("right").value = left;
+            }
+
+            function checkUncheckAll() {
+                let checkAll = document.getElementById("check_all").value;
+                if (checkAll == "Check All") {
+                    document.getElementById("check_all").textContent = "Uncheck All";
+                    document.getElementsByTagName("label")[0].textContent = "Uncheck All";
+                    document.getElementById("check_all").value = "Uncheck All";
+                    document.getElementById("first").checked = true;
+                    document.getElementById("second").checked = true;
+                    document.getElementById("third").checked = true;
+                    document.getElementById("fourth").checked = true;
+                } else {
+                    document.getElementById("check_all").textContent = "Check All";
+                    document.getElementsByTagName("label")[0].textContent = "Check All";
+                    document.getElementById("check_all").value = "Check All";
+                    document.getElementById("first").checked = false;
+                    document.getElementById("second").checked = false;
+                    document.getElementById("third").checked = false;
+                    document.getElementById("fourth").checked = false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+        <h1>Javascript extra credit problems</h1>
+        <h2>Part 1</h2>
+        <hr>
+        <form>
+            <input type="text" id="left" name="left" >
+            
+            <button type="button" id="jump" onclick="jumpText()">JUMP &gt;</button>  
+            
+            <input type="text" id="right" name="right" >
+        </form>
+        
+        <h2>Part 2</h2>
+        <input type="checkbox" id="check_all" name="check_all" value="Check All" onclick="checkUncheckAll()">
+        <label for="check_all">Check All</label>
+
+        <input type="checkbox" id="first" name="first" value="first">
+        <label for="first">first</label>
+
+        <input type="checkbox" id="second" name="second" value="second">
+        <label for="second">second</label>
+
+        <input type="checkbox" id="third" name="third" value="third">
+        <label for="third">third</label>
+
+        <input type="checkbox" id="fourth" name="fourth" value="fourth">
+        <label for="fourth">fourth</label>
+    </body>
+</html>
